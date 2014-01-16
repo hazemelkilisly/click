@@ -5,7 +5,7 @@
 <div class="row" align="center" style="background-color:black; box-shadow: 10px 10px 5px #888888;">
   <div class="col-md-12">
     <% unless @remote.buttons.where(:function => "power").first %>
-      <%=link_to(image_tag("/images/power.png", :style => "max-height:50px;", :alt => "Power"), define_remote_path(@remote, :function => "power"))%>
+      <%=link_to(image_tag("/images/images/power.png", :style => "max-height:50px;", :alt => "Power"), define_remote_path(@remote, :function => "power"))%>
     <% else %>
       <img src="/images/images/spacer.gif" max-height="50px" alt="">
     <%end%>
