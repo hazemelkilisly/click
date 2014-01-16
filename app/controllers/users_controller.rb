@@ -7,8 +7,8 @@ class UsersController < ApplicationController
 	def get_pushed
 		user = User.find(params[:id])
 		pushed_b = user.get_pushed
-		# render text: pushed_b.join(',')
-		render text: "record,123"
+		render text: pushed_b.join(',')
+		# render text: "record,123"
 	end
 	def update_button
 		current_user.waiting_code(params[:code])
