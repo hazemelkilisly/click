@@ -2,10 +2,10 @@
 setInterval(function(){
     $.ajax({
         type: 'GET',
-        url: '<%="http://0.0.0.0:3000/users/#{current_user.id}/answered"%>',
+        url: '<%="http://iclick.herokuapp.com/users/#{current_user.id}/answered"%>',
         success: function(data, textStatus, jqXHR) {
             if (data == 'supplied')
-                window.location.href = '<%="http://0.0.0.0:3000/remotes/#{@button.remote.id}"%>';
+                window.location.href = '<%="http://iclick.herokuapp.com/remotes/#{@button.remote.id}"%>';
         }
     });
 },2000);
