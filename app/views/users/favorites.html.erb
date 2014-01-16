@@ -1,0 +1,31 @@
+<div class="jumbotron">
+  <h2 align="center"><b>You Listened Music</b></h2>
+  <div class="row" align="center">
+
+    <% if @songs.size > 0 %>
+      <% @songs.each do |song|%>
+        <div class="col-md-3">
+          <% if song.image %>
+            <%= image_tag(song.image, :style => "max-height:100px;", :class=>"img-rounded")%>
+          <% else %>
+            <%= image_tag("/images/melody.jpg", :style => "max-height:100px;", :class=>"img-rounded")%>
+          <% end %>
+          <h4><b>Song: </b> <%=song.name%></h4>
+          <h4><b>Artist: </b> <%=song.artist%></h4>
+          <h4>
+            <b>Download: </b>
+            <% if song.download_link != nil %>
+              <%=link_to "Download", song.download_link, {target:"blank"}%>
+            <% else %>
+              N/A
+            <% end %>
+          </h4>
+        </div>
+        <div class="clearfix visible-xs"><hr></div>
+        <!-- Add the extra clearfix for only the required viewport -->
+      <% end %>
+    <% else %>
+      <h4>No songs yet..</h4>
+    <% end %>
+  </div>
+</div>

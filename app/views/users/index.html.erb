@@ -1,0 +1,82 @@
+<div class="jumbotron">
+	<div class="row" align="center">
+
+		<% if @user.remotes.where(:name => "ac").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/ac-icon.png", :alt => "AC"), @user.remotes.where(:name => "ac").first)%>			
+			</div>
+		<% end %>
+		<% if @user.remotes.where(:name => "satellite").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/dish-icon.png", :alt => "Satellite"), @user.remotes.where(:name => "satellite").first)%>			
+			</div>
+		<% end %>
+		<!-- Add the extra clearfix for only the required viewport -->
+		<div class="clearfix visible-xs"></div>
+
+		<% if @user.remotes.where(:name => "dvd").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/dvd-icon.png", :alt => "DVD"), @user.remotes.where(:name => "dvd").first)%>	
+			</div>
+		<% end %>
+		<% if @user.remotes.where(:name => "tv").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/tv-icon.png", :alt => "TV"), @user.remotes.where(:name => "tv").first)%>	
+			</div>
+		<% end %>
+
+		<div class="col-md-6">
+			<img src="/images/plus.png" style="width:150px;height:150px;"alt="New Remote", data-toggle="modal", data-target="#myModal">
+			</img>
+		</div>
+
+	</div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Create New Remote</h4>
+      </div>
+      <div class="modal-body">
+        <h1> Choose Type of Remote: </h1>
+
+
+	<div class="row" align="center">
+
+		<% unless @user.remotes.where(:name => "ac").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/ac-icon.png", :alt => "AC"), new_remote_path(:fun => "ac"))%>			
+			</div>
+		<% end %>
+		<% unless @user.remotes.where(:name => "satellite").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/dish-icon.png", :alt => "Satellite"), new_remote_path(:fun => "satellite"))%>			
+			</div>
+		<% end %>
+		<!-- Add the extra clearfix for only the required viewport -->
+		<div class="clearfix visible-xs"></div>
+
+		<% unless @user.remotes.where(:name => "dvd").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/dvd-icon.png", :alt => "DVD"), new_remote_path(:fun => "dvd"))%>	
+			</div>
+		<% end %>
+		<% unless @user.remotes.where(:name => "tv").first %>
+			<div class="col-md-6">
+				<%=link_to(image_tag("/images/tv-icon.png", :alt => "TV"), new_remote_path(:fun => "tv"))%>	
+			</div>
+		<% end %>
+
+	</div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

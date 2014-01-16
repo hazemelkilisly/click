@@ -1,0 +1,16 @@
+body
+{
+background-image:url('/images/Untitled-1.jpg');
+background-repeat:repeat;
+min-height: 0px;
+}
+.navbar-static-top {
+  margin-bottom: 19px;
+}
+.item { width: 125px; height: 80px; }   
+.item a { text-decoration: none; display:block; }
+.item a img { border: solid 1px #ccc; padding: 1px;}    
+ 
+// the span item for showing play icon. 
+.item a span.play { display:none; background: url('/images/tick.png') center center no-repeat; margin: -80px 10px 0 0; position: relative; z-index: 100; opacity: 0.8; filter: alpha(opacity=80); }
+.item a:active span.play { display:block; }

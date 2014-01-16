@@ -1,0 +1,105 @@
+<script>
+setInterval(function(){
+    $.ajax({
+        type: 'GET',
+        url: '<%="http://0.0.0.0:3000/users/#{current_user.id}/answered"%>',
+        success: function(data, textStatus, jqXHR) {
+            if (data == 'supplied')
+                window.location.href = '<%="http://0.0.0.0:3000/remotes/#{@button.remote.id}"%>';
+        }
+    });
+},2000);
+</script>
+<div class="jumbotron">
+	<div class="row" align="center">
+
+    <%= link_to "Discard this button!", discard_waiting_users_path %>
+    
+	  <div class="col-md-12">
+
+      <% if (@button.function == "power") %>
+        <%= image_tag("/images/power.png", :style => "max-height:100px;")%>
+      <% elsif (@button.function == "volume_plus") %>
+        <%= image_tag("/images/images/volume_plus.gif", :style => "width:84;height:99;") %>
+      <% elsif (@button.function == "ch_plus") %>
+        <%= image_tag("/images/images/ch_plus.gif", :style => "width:84;height:99;") %>
+      <% elsif (@button.function == "volume_minus") %>
+        <%= image_tag("/images/images/volume_minus.gif", :style => "width:84;height:96;") %>
+      <% elsif (@button.function == "ch_minus") %>
+        <%= image_tag("/images/images/ch_minus.gif", :style => "width:84;height:96;") %>
+      <% elsif (@button.function == "muting") %>
+        <%= image_tag("/images/images/muting.gif", :style => "width:84;height:48;") %>
+      <% elsif (@button.function == "input") %>
+        <%= image_tag("/images/images/input.gif", :style => "width:84;height:48;") %>
+      <% elsif (@button.function == "num1") %>
+        <%= image_tag("/images/images/num1.gif", :style => "width:56;height:58;") %>
+      <% elsif (@button.function == "num2") %>
+        <%= image_tag("/images/images/num2.gif", :style => "width:57;height:58;") %>
+      <% elsif (@button.function == "num3") %>
+        <%= image_tag("/images/images/num3.gif", :style => "width:56;height:58;") %>
+      <% elsif (@button.function == "num4") %>
+        <%= image_tag("/images/images/num4.gif", :style => "width:56;height:59;") %>
+      <% elsif (@button.function == "num5") %>
+        <%= image_tag("/images/images/num5.gif", :style => "width:57;height:59;") %>
+      <% elsif (@button.function == "num6") %>
+        <%= image_tag("/images/images/num6.gif", :style => "width:56;height:59;") %>
+      <% elsif (@button.function == "num7") %>
+        <%= image_tag("/images/images/num7.gif", :style => "width:56;height:58;") %>
+      <% elsif (@button.function == "num8") %>
+        <%= image_tag("/images/images/num8.gif", :style => "width:57;height:58;") %>
+      <% elsif (@button.function == "num9") %>
+        <%= image_tag("/images/images/num9.gif", :style => "width:56;height:58;") %>
+      <% elsif (@button.function == "num0") %>
+        <%= image_tag("/images/images/num0.gif", :style => "width:57;height:51;") %>
+      <% elsif (@button.function == "guide") %>
+        <%= image_tag("/images/images/guide.gif", :style => "width:81;height:50;") %>
+      <% elsif (@button.function == "home") %>
+        <%= image_tag("/images/images/home.gif", :style => "width:84;height:50;") %>
+      <% elsif (@button.function == "up") %>
+        <%= image_tag("/images/images/up.gif", :style => "width:67;height:46;") %>
+      <% elsif (@button.function == "left") %>
+        <%= image_tag("/images/images/left.gif", :style => "width:67;height:54;") %>
+      <% elsif (@button.function == "enter") %>
+        <%= image_tag("/images/images/enter.gif", :style => "width:67;height:54;") %>
+      <% elsif (@button.function == "right") %>
+        <%= image_tag("/images/images/right.gif", :style => "width:67;height:54;") %>
+      <% elsif (@button.function == "down") %>
+        <%= image_tag("/images/images/down.gif", :style => "width:67;height:46;") %>
+      <% elsif (@button.function == "return") %>
+        <%= image_tag("/images/images/return.gif", :style => "width:81;height:48;") %>
+      <% elsif (@button.function == "options") %>
+        <%= image_tag("/images/images/options.gif", :style => "width:84;height:48;") %>
+      <% elsif (@button.function == "gen1") %>
+        <%= image_tag("/images/images/gen1.gif", :style => "width:49;height:51;") %>
+      <% elsif (@button.function == "gen2") %>
+        <%= image_tag("/images/images/gen2.gif", :style => "width:50;height:51;") %>
+      <% elsif (@button.function == "gen3") %>
+        <%= image_tag("/images/images/gen3.gif", :style => "width:49;height:51;") %>
+      <% elsif (@button.function == "gen4") %>
+        <%= image_tag("/images/images/gen4.gif", :style => "width:49;height:51;") %>
+      <% elsif (@button.function == "prev") %>
+        <%= image_tag("/images/images/prev.gif", :style => "width:49;height:48;") %>
+      <% elsif (@button.function == "next") %>
+        <%= image_tag("/images/images/next.gif", :style => "width:49;height:48;") %>
+      <% elsif (@button.function == "back") %>
+        <%= image_tag("/images/images/back.gif", :style => "width:49;height:48;") %>
+      <% elsif (@button.function == "play") %>
+        <%= image_tag("/images/images/play.gif", :style => "width:99;height:49;") %>
+      <% elsif (@button.function == "forward") %>
+        <%= image_tag("/images/images/forward.gif", :style => "width:49;height:49;") %>
+      <% elsif (@button.function == "stop") %>
+        <%= image_tag("/images/images/stop.gif", :style => "width:99;height:48;") %>
+      <% elsif (@button.function == "pause") %>
+        <%= image_tag("/images/images/pause.gif", :style => "width:49;height:48;") %>
+      <% else %>
+        <%= image_tag("/images/images/plus.png", :style => "width:50;height:50;") %>
+      <% end %>
+
+	  </div>
+	  <br>
+	  <h3>Waiting for ( <%=(@button.function).humanize%> Button from <%=(@button.remote.name).humanize%> Remote ) Signal from Device..</h3>
+	  <h4>Please press the corresponding button from the real remote while directing it to the receiver</h4>
+
+	  <div class="col-md-12"><img src="/images/loading-animation.gif" style="max-height:200px"></img></div>
+	</div>
+</div>

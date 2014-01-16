@@ -1,0 +1,472 @@
+<h2>
+  <%=link_to("Discard this Remote", discard_remote_path(@remote),{:type=>"button", :class=>"btn btn-danger"})%>
+</h2>
+
+<div class="row" align="center" style="background-color:black; box-shadow: 10px 10px 5px #888888;">
+
+  <div class="col-md-12">
+    <% if @remote.buttons.where(:function => "power").first %>
+      <%=link_to(image_tag("/images/power.png", :style => "max-height:50px;", :alt => "Power"), press_remote_path(@remote.buttons.where(:function => "power").first), :remote=>true)%>
+    <% else %>
+      <img src="/images/images/spacer.gif" max-height="50px" alt="">
+    <%end%>
+  </div>
+
+  <div class="col-md-3">
+    <table id="Table_01" width="218" height="261" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="5">
+          <img src="/images/images/spacer.gif" width="218" height="10" alt=""></td>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="4">
+          <img src="/images/images/spacer.gif" width="27" height="251" alt=""></td>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "volume_plus").first %>
+            <%=link_to(image_tag("/images/images/volume_plus.gif", :style => "width:84;height:99;", :alt => "Volume Plus"), press_remote_path(@remote.buttons.where(:function => "volume_plus").first), :remote=>true)%>      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="99" alt="">
+          <%end%>
+        </td> 
+        <td rowspan="4">
+          <img src="/images/images/spacer.gif" width="1" height="251" alt=""></td>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "ch_plus").first %>
+            <%=link_to(image_tag("/images/images/ch_plus.gif", :style => "width:84;height:99;", :alt => "Channel Plus"), press_remote_path(@remote.buttons.where(:function => "ch_plus").first), :remote=>true)%>      
+
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="99" alt="">
+          <%end%>
+        </td>
+        <td rowspan="4">
+          <img src="/images/images/spacer.gif" width="22" height="251" alt=""></td>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <% if @remote.buttons.where(:function => "volume_minus").first %>
+            <%=link_to(image_tag("/images/images/volume_minus.gif", :style => "width:84;height:96;", :alt => "Volume Minus"), press_remote_path(@remote.buttons.where(:function => "volume_minus").first), :remote=>true)%>    
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="96" alt="">
+          <%end%>
+
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "ch_minus").first %>
+            <%=link_to(image_tag("/images/images/ch_minus.gif", :style => "width:84;height:96;", :alt => "Channel Minus"), press_remote_path(@remote.buttons.where(:function => "ch_minus").first), :remote=>true)%>    
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="96" alt="">
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <% if @remote.buttons.where(:function => "muting").first %>
+            <%=link_to(image_tag("/images/images/muting.gif", :style => "width:84;height:48;", :alt => "Mute"), press_remote_path(@remote.buttons.where(:function => "muting").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="48" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "input").first %>
+              <%=link_to(image_tag("/images/images/input.gif", :style => "width:84;height:48;", :alt => "Input"), press_remote_path(@remote.buttons.where(:function => "input").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="48" alt="">
+          <%end%>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img src="/images/images/spacer.gif" width="84" height="8" alt=""></td>
+
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="84" height="8" alt=""></td>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-md-3">
+    <table id="Table_02" width="218" height="262" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="7">
+          <img src="/images/images/spacer.gif" width="218" height="25" alt=""></td>
+
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="5">
+          <img src="/images/images/spacer.gif" width="28" height="236" alt=""></td>
+        </td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num1").first %>
+              <%=link_to(image_tag("/images/images/num1.gif", :style => "width:56;height:58;", :alt => "1"), press_remote_path(@remote.buttons.where(:function => "num1").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="58" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num2").first %>
+            <%=link_to(image_tag("/images/images/num2.gif", :style => "width:57;height:58;", :alt => "2"), press_remote_path(@remote.buttons.where(:function => "num2").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="58" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "num3").first %>
+          <%=link_to(image_tag("/images/images/num3.gif", :style => "width:56;height:58;", :alt => "3"), press_remote_path(@remote.buttons.where(:function => "num3").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="58" alt="">
+          <%end%>
+        </td>
+        <td rowspan="5">
+          <img src="/images/images/spacer.gif" width="21" height="236" alt="">
+
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num4").first %>
+            <%=link_to(image_tag("/images/images/num4.gif", :style => "width:56;height:59;", :alt => "4"), press_remote_path(@remote.buttons.where(:function => "num4").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="59" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num5").first %>
+            <%=link_to(image_tag("/images/images/num5.gif", :style => "width:57;height:59;", :alt => "5"), press_remote_path(@remote.buttons.where(:function => "num5").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="59" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "num6").first %>
+            <%=link_to(image_tag("/images/images/num6.gif", :style => "width:56;height:59;", :alt => "6"), press_remote_path(@remote.buttons.where(:function => "num6").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="59" alt="">
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num7").first %>
+            <%=link_to(image_tag("/images/images/num7.gif", :style => "width:56;height:58;", :alt => "7"), press_remote_path(@remote.buttons.where(:function => "num7").first), :remote=>true)%>  
+
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="58" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num8").first %>
+            <%=link_to(image_tag("/images/images/num8.gif", :style => "width:57;height:58;", :alt => "8"), press_remote_path(@remote.buttons.where(:function => "num8").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="57" height="58" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "num9").first %>
+            <%=link_to(image_tag("/images/images/num9.gif", :style => "width:56;height:58;", :alt => "9"), press_remote_path(@remote.buttons.where(:function => "num9").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="56" height="58" alt="">
+          <%end%>
+        </td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <img src="/images/images/spacer.gif" width="53" height="61" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "num0").first %>
+            <%=link_to(image_tag("/images/images/num0.gif", :style => "width:57;height:51;", :alt => "0"), press_remote_path(@remote.buttons.where(:function => "num0").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="57" height="51" alt="">
+          <%end%>
+        </td>
+        <td colspan="2" rowspan="2">
+          <img src="/images/images/spacer.gif" width="59" height="61" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="57" height="10" alt=""></td>
+      </tr>
+      <tr>
+        <td>
+          <img src="/images/images/spacer.gif" width="28" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="53" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="3" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="54" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="3" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="56" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="21" height="1" alt=""></td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- Add the extra clearfix for only the required viewport -->
+  <div class="clearfix visible-xs"></div>
+
+  <div class="col-md-3">
+    <table id="Table_01" width="218" height="262" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="9">
+          <img src="/images/images/spacer.gif" width="218" height="9" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="2" rowspan="2">
+          <img src="/images/images/spacer.gif" width="25" height="96" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "guide").first %>
+            <%=link_to(image_tag("/images/images/guide.gif", :style => "width:81;height:50;", :alt => "Guide"), press_remote_path(@remote.buttons.where(:function => "guide").first), :remote=>true)%>  
+          <% else %>
+            <img src="/images/images/spacer.gif" width="81" height="50" alt="">
+          <%end%>
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="50" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "home").first %>
+            <%=link_to(image_tag("/images/images/home.gif", :style => "width:84;height:50;", :alt => "Home"), press_remote_path(@remote.buttons.where(:function => "home").first), :remote=>true)%>            
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="50" alt="">
+          <%end%>
+        </td>
+        <td colspan="2" rowspan="2">
+          <img src="/images/images/spacer.gif" width="27" height="96" alt=""></td>
+      </tr>
+      <tr>
+        <td>
+          <img src="/images/images/spacer.gif" width="52" height="46" alt=""></td>
+        <td colspan="3">
+          <% if @remote.buttons.where(:function => "up").first %>
+            <%=link_to(image_tag("/images/images/up.gif", :style => "width:67;height:46;", :alt => "Up"), press_remote_path(@remote.buttons.where(:function => "up").first), :remote=>true)%>             
+          <% else %>
+            <img src="/images/images/spacer.gif" width="67" height="46" alt="">
+          <%end%>
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="47" height="46" alt=""></td>
+      </tr>
+      <tr>
+        <td rowspan="4">
+          <img src="/images/images/spacer.gif" width="10" height="156" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "left").first %>
+            <%=link_to(image_tag("/images/images/left.gif", :style => "width:67;height:54;", :alt => "Left"), press_remote_path(@remote.buttons.where(:function => "left").first), :remote=>true)%>            
+          <% else %>
+            <img src="/images/images/spacer.gif" width="67" height="54" alt="">
+          <%end%>
+        </td>
+        <td colspan="3">
+          <% if @remote.buttons.where(:function => "enter").first %>
+            <%=link_to(image_tag("/images/images/enter.gif", :style => "width:67;height:54;", :alt => "Enter"), press_remote_path(@remote.buttons.where(:function => "enter").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="67" height="54" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "right").first %>
+            <%=link_to(image_tag("/images/images/right.gif", :style => "width:67;height:54;", :alt => "Right"), press_remote_path(@remote.buttons.where(:function => "right").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="67" height="54" alt="">
+          <%end%>
+        </td>
+        <td rowspan="4">
+          <img src="/images/images/spacer.gif" width="7" height="156" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="67" height="46" alt=""></td>
+        <td colspan="3">
+          <% if @remote.buttons.where(:function => "down").first %>
+            <%=link_to(image_tag("/images/images/down.gif", :style => "width:67;height:46;", :alt => "Down"), press_remote_path(@remote.buttons.where(:function => "down").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="67" height="46" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="67" height="46" alt=""></td>
+      </tr>
+      <tr>
+        <td rowspan="2">
+          <img src="/images/images/spacer.gif" width="15" height="56" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "return").first %>
+            <%=link_to(image_tag("/images/images/return.gif", :style => "width:81;height:48;", :alt => "Return"), press_remote_path(@remote.buttons.where(:function => "return").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="81" height="48" alt="">
+          <%end%>
+        </td>
+        <td rowspan="2">
+          <img src="/images/images/spacer.gif" width="1" height="56" alt=""></td>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "options").first %>
+            <%=link_to(image_tag("/images/images/options.gif", :style => "width:84;height:48;", :alt => "Options"), press_remote_path(@remote.buttons.where(:function => "options").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="84" height="48" alt="">
+          <%end%>
+        </td>
+        <td rowspan="2">
+          <img src="/images/images/spacer.gif" width="20" height="56" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="81" height="8" alt=""></td>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="84" height="8" alt=""></td>
+      </tr>
+      <tr>
+        <td>
+          <img src="/images/images/spacer.gif" width="10" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="15" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="52" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="29" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="37" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="47" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="20" height="1" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="7" height="1" alt=""></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="col-md-3">
+    <table id="Table_01" width="219" height="261" border="0" cellpadding="0" cellspacing="0">
+      <tr>
+        <td colspan="6">
+          <img src="/images/images/spacer.gif" width="218" height="9" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="9" alt=""></td>
+      </tr>
+      <tr>
+        <td rowspan="6">
+          <img src="/images/images/spacer.gif" width="11" height="252" alt=""></td>
+        <td>
+          <% if @remote.buttons.where(:function => "gen1").first %>
+            <%=link_to(image_tag("/images/images/gen1.gif", :style => "width:49;height:51;", :alt => "General 1"), press_remote_path(@remote.buttons.where(:function => "gen1").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="51" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "gen2").first %>
+            <%=link_to(image_tag("/images/images/gen2.gif", :style => "width:50;height:51;", :alt => "General 2"), press_remote_path(@remote.buttons.where(:function => "gen2").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="50" height="51" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "gen3").first %>
+            <%=link_to(image_tag("/images/images/gen3.gif", :style => "width:49;height:51;", :alt => "General 3"), press_remote_path(@remote.buttons.where(:function => "gen3").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="51" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "gen4").first %>
+            <%=link_to(image_tag("/images/images/gen4.gif", :style => "width:49;height:51;", :alt => "General 4"), press_remote_path(@remote.buttons.where(:function => "gen4").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="51" alt="">
+          <%end%>
+        </td>
+        <td rowspan="6">
+          <img src="/images/images/spacer.gif" width="10" height="252" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="51" alt=""></td>
+      </tr>
+      <tr>
+        <td>
+          <% if @remote.buttons.where(:function => "prev").first %>
+            <%=link_to(image_tag("/images/images/prev.gif", :style => "width:49;height:48;", :alt => "Previous"), press_remote_path(@remote.buttons.where(:function => "prev").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="48" alt="">
+          <%end%>
+        </td>
+        <td colspan="2">
+          <img src="/images/images/spacer.gif" width="99" height="48" alt=""></td>
+        <td>
+          <% if @remote.buttons.where(:function => "next").first %>
+            <%=link_to(image_tag("/images/images/next.gif", :style => "width:49;height:48;", :alt => "Next"), press_remote_path(@remote.buttons.where(:function => "next").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="48" alt="">
+          <%end%>
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="48" alt=""></td>
+      </tr>
+      <tr>
+        <td>
+          <% if @remote.buttons.where(:function => "back").first %>
+            <%=link_to(image_tag("/images/images/back.gif", :style => "width:49;height:48;", :alt => "Back"), press_remote_path(@remote.buttons.where(:function => "back").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="48" alt="">
+          <%end%>
+        </td>
+        <td colspan="2" rowspan="2">
+          <% if @remote.buttons.where(:function => "play").first %>
+            <%=link_to(image_tag("/images/images/play.gif", :style => "width:99;height:49;", :alt => "Play"), press_remote_path(@remote.buttons.where(:function => "play").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="99" height="49" alt="">
+          <%end%>
+        </td>
+        <td rowspan="2">
+          <% if @remote.buttons.where(:function => "forward").first %>
+            <%=link_to(image_tag("/images/images/forward.gif", :style => "width:49;height:49;", :alt => "Forward"), press_remote_path(@remote.buttons.where(:function => "forward").first), :remote=>true)%>                      
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="49" alt="">
+          <%end%>
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="48" alt=""></td>
+      </tr>
+      <tr>
+        <td rowspan="3">
+          <img src="/images/images/spacer.gif" width="49" height="105" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="1" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <% if @remote.buttons.where(:function => "stop").first %>
+            <%=link_to(image_tag("/images/images/stop.gif", :style => "width:99;height:48;", :alt => "Stop"), press_remote_path(@remote.buttons.where(:function => "stop").first), :remote=>true)%>                                
+          <% else %>
+            <img src="/images/images/spacer.gif" width="99" height="48" alt="">
+          <%end%>
+        </td>
+        <td>
+          <% if @remote.buttons.where(:function => "pause").first %>
+            <%=link_to(image_tag("/images/images/pause.gif", :style => "width:49;height:48;", :alt => "Pause"), press_remote_path(@remote.buttons.where(:function => "pause").first), :remote=>true)%>                                
+          <% else %>
+            <img src="/images/images/spacer.gif" width="49" height="48" alt="">
+          <%end%>
+        </td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="48" alt=""></td>
+      </tr>
+      <tr>
+        <td colspan="3">
+          <img src="/images/images/spacer.gif" width="148" height="56" alt=""></td>
+        <td>
+          <img src="/images/images/spacer.gif" width="1" height="56" alt=""></td>
+      </tr>
+    </table>
+  </div>
+  
+</div>
