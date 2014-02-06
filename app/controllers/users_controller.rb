@@ -77,4 +77,38 @@ class UsersController < ApplicationController
 		end
 		render nothing: true
 	end
+
+	def query
+		if params[:q]
+			user = User.find(params[:id])
+			str = params[:q].downcase.split()
+			if (str.size == 2 || str.size == 3)
+				remote = user.remotes.where(:name => str[0]).first
+				if remote
+					if str.size == 2
+						button = remote.buttons.where(:function => (str[1])).first
+					else
+						button = remote.buttons.where(:function => (str[1]+"_"+str[2])).first
+					end
+					if button
+						button.currently_pressed = true
+						button.save
+						render text: "Accepted"
+					else
+						if str.size == 2
+							render text: "You specified non defined remote functionality: "+str[1]
+						else
+							render text: "You specified non defined remote functionality: "+str[1]+" "+str[2]
+						end
+					end
+				else
+					render text: "You specified non existing remote: "+str[0]
+				end
+			else
+				render text: "Text length is not matching: "+str.join(" ")
+			end
+		else
+			render text: "You are sending no query!"
+		end
+	end
 end

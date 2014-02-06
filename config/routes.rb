@@ -15,6 +15,7 @@ Click::Application.routes.draw do
       get :add_favorite
       get :get_pushed
       get :answered
+      get :query
     end
   end
 
